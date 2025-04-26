@@ -1,22 +1,14 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '../img/logo.png';
 
-
 function Navbar() {
-  // Ensure Bootstrap JS is properly initialized
-  useEffect(() => {
-    import('bootstrap/dist/js/bootstrap.bundle.min');
-  }, []);
-
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <a className="navbar-brand" href="#home">
           <img src={logo} alt="Logo" width="50" height="50" className="d-inline-block align-top" />
-        </Link>
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -31,13 +23,13 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+              <a className="nav-link" href="#home">Home</a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">About</Link>
+              <a className="nav-link" href="#about">About</a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contact">Contact</Link>
+              <a className="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
