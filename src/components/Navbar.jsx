@@ -1,7 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min'; // Bootstrap JS
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import logo from '../img/logo.png';
+import '../navbar.css'; // Import the custom CSS file
 
 function Navbar() {
   return (
@@ -22,7 +23,7 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto text-end">
+          <ul className="navbar-nav ms-auto ">
             <li className="nav-item"><a className="nav-link" href="#home">Home</a></li>
             <li className="nav-item"><a className="nav-link" href="#about">About</a></li>
             <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
