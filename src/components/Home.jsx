@@ -39,7 +39,6 @@ function Home() {
 
   return (
     <div>
-      {/* Home Section */}
       <section id="home" className="vh-100 d-flex align-items-center justify-content-center text-center bg-white">
         <div className="container">
           <h1 className="display-4 fw-bold mb-4">Welcome to My Portfolio</h1>
@@ -51,7 +50,6 @@ function Home() {
         </div>
       </section>
 
-      {/* About Section */}
       <section id="about" className="vh-100 d-flex align-items-center justify-content-center bg-light">
         <div className="container text-center">
           <About />
