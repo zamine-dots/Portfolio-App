@@ -1,26 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import logo from '../img/logo.png';
+import logo from '../img/logo.webp';
 
 function Navbar() {
-  // Initialize Bootstrap JS
-  useEffect(() => {
-    // This ensures Bootstrap JS is properly loaded
-  }, []);
-
-  // Function to collapse the navbar when a link is clicked
-  const collapseNavbar = () => {
-    if (window.innerWidth < 992) { // Bootstrap's lg breakpoint
-      const navbarToggler = document.querySelector('.navbar-toggler');
-      const navbarCollapse = document.querySelector('.navbar-collapse');
-      
-      if (navbarToggler && navbarCollapse.classList.contains('show')) {
-        // Trigger click on the toggler to close the menu
-        navbarToggler.click();
-      }
-    }
-  };
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Combined click handler for smooth scroll and collapse
   const handleNavClick = (e) => {
@@ -36,30 +19,32 @@ function Navbar() {
     }
     
     // Collapse the navbar after clicking
-    collapseNavbar();
+    setIsMenuOpen(false);
   };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div className="container-fluid">
         <a className="navbar-brand" href="#home" onClick={handleNavClick}>
-          <img src={logo} alt="Logo" width="50" height="50" className="d-inline-block align-top" />
+          <img src={logo} alt="Amine Zobaa home" width="50" height="50" className="d-inline-block align-top" />
         </a>
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
           aria-controls="navbarNav"
-          aria-expanded="false"
+          aria-expanded={isMenuOpen}
           aria-label="Toggle navigation"
+          onClick={() => setIsMenuOpen((open) => !open)}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className={`collapse navbar-collapse${isMenuOpen ? ' show' : ''}`} id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <a className="nav-link" href="#home" onClick={handleNavClick}>Home</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#projects" onClick={handleNavClick}>Projects</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#about" onClick={handleNavClick}>About</a>

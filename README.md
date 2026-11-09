@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Amine Zobaa — Web Developer Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![CI](https://github.com/zamine-dots/Portfolio-App/actions/workflows/ci.yml/badge.svg)](https://github.com/zamine-dots/Portfolio-App/actions/workflows/ci.yml)
 
-## Available Scripts
+A responsive portfolio that introduces my web development work, links to runnable projects, and gives prospective clients a direct way to discuss a project.
 
-In the project directory, you can run:
+[Live portfolio](https://portfolio-app-beta-three.vercel.app) · [Freelance profile](https://tunisiefreelance.tn/fr/profile/zobaa-a-b65c97)
 
-### `npm start`
+![Portfolio home and featured projects](docs/portfolio-desktop.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## What visitors can do
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Explore FSM Navigator, Sector Zero, and website examples for local businesses.
+- Open project demos and source repositories directly from the project cards.
+- Read about my React, TypeScript, Next.js, and API experience.
+- Reach my freelance profile or LinkedIn from the contact section.
+- Navigate the page using a responsive menu with distinct section anchors.
 
-### `npm test`
+## Run locally
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Use **Node.js 24 LTS** (24.15 or later) and npm. An `.nvmrc` is included.
 
-### `npm run build`
+```bash
+npm ci
+npm run dev
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Open the local URL printed by Vite. No environment variables or backend are needed.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm test          # contact journey and navigation targets
+npm run build    # production assets in build/
+npm run preview  # serve the production build locally
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Implementation
 
-### `npm run eject`
+React and Bootstrap provide the interface; Vite builds the site. Vitest and Testing Library check that visitors can discover work and reach the intended contact destination.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| File | Purpose |
+| --- | --- |
+| `src/components/Home.jsx` | Introduction and featured project cards |
+| `src/components/About.jsx` | Background and technical focus |
+| `src/components/Contact.jsx` | Freelance, GitHub, and LinkedIn links |
+| `src/components/Navbar.jsx` | Mobile navigation and section scrolling |
+| `index.html` | Page title and search description |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The contact action opens Tunisie Freelance. This static site does not collect or send contact-form data.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Deploy
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Run `npm ci` followed by `npm run build`, and publish **`build/`** on a static host. In Vercel, use the Vite preset and set the output directory to `build`. The output directory is intentionally retained from the earlier deployment setup.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+GitHub Actions runs the tests, production build, and dependency audit on pushes and pull requests. Runtime layout checks are performed separately in a browser.
