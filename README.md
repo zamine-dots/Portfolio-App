@@ -4,7 +4,7 @@
 
 A responsive portfolio that introduces my web development work, links to runnable projects, and gives prospective clients a direct way to discuss a project.
 
-[Live portfolio](https://portfolio-app-beta-three.vercel.app) · [Freelance profile](https://tunisiefreelance.tn/fr/profile/zobaa-a-b65c97)
+[Freelance profile](https://tunisiefreelance.tn/fr/profile/zobaa-a-b65c97)
 
 ![Portfolio home and featured projects](docs/portfolio-desktop.png)
 
